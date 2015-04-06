@@ -1,0 +1,22 @@
+#!/bin/sh
+
+clear
+echo "Welcome, I will now install some cool shit"
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install sublime-text-installer -y
+sudo apt-get install emacs -y
+sudo apt-get install vim -y
+sudo apt-get install git -y
+sudo apt-get install gdb -y
+sudo apt-get install ghex -y
+sudo apt-get install gnome-tweak-tool -y
+sudo apt-get install gufw -y
+
+sudo cp ~/.bashrc ~/.bashrc-backup
+sudo cp ~/Scripts/bashrc-custom ~/.bashrc
+sudo cp ~/Scripts/bash_aliases ~/.bash_aliases
+
+sudo shutdown -r now
+

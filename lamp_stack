@@ -1,0 +1,44 @@
+#!/bin/sh
+
+f_pause(){
+	read -p "$*"
+}
+
+clear
+echo "install lamp stack"
+sudo apt-get update -y
+sudo apt-get install apache2 -y
+
+ifconfig eth0 | grep inet | awk '{ print $2 }'
+
+f_pause 'write down the displayed ip address and and press enter'
+
+sudo apt-get install mysql-server -y 
+sudo apt-get install libapache2-mod-auth-mysql -y
+sudo apt-get install php5-mysql -y
+
+sudo mysql_install_db
+
+sudo /usr/bin/mysql_secure_installation
+
+sudo apt-get install php5 -y
+sudo apt-get install libapache2-mod-php5 -y
+sudo apt-get install php5-mcrypt -y
+
+echo "Add index.php to the beginning of index files. The page should now look like this:
+
+<IfModule mod_dir.c>
+
+          DirectoryIndex index.php index.html index.cgi index.pl index.php index.xhtml index.htm
+
+</IfModule>"
+
+sudo nano /etc/apache2/mods-enabled/dir.conf
+
+echo "<?php
+phpinfo();
+?>" > info.php
+
+sudo cp ./info.php /var/www/html/info.php
+
+sudo service apache2 restart
