@@ -6,13 +6,13 @@
 
 3) install virtualbox and the extensions pack.
 
-4) create a system FIXED partition got ubuntu. once done close virtual box
+4) create a system FIXED partition for ubuntu. once done close virtual box
 
 5) navigate to virtual box directory (in windows its in the user directory, dont know where it is for mac...) open up the folder that is titled after the virtualbox machine you just made. 
 
-6) open the vbox set up file (the small one, 7kb or so, its blue) in notpadd++ or sublime and scroll down until you see vramsize. change that to 256, save and exit
+6) open the vbox set up file (the small one, 7kb or so, its blue) in notpadd++ or sublime and scroll down until you see VRAMsize. change that to 256, save and exit
 
-7) launch virtual box, check to make sure that the system image has 256 ram in the display stab in the settings menu. mount the ubuntu iso you downloaded into the empty drive slot under storage in settings menu and click ok.
+7) launch virtual box, check to make sure that the system image has 256 vram in the display tab in the settings menu, also make sure the enable 3D acceleration option is checked. mount the ubuntu iso you downloaded into the empty drive slot under storage in settings menu and click ok.
 
 8) launch the virtual box and install ubuntu. 
 
@@ -20,11 +20,11 @@
 
 # Setting up Ubuntu Environment with scripts
 
-0) start ubuntu and follw the steps from within the vbox image
+0) start ubuntu and follow the steps from within the vbox image
 
-1) got to https://github.com/iliabenson/comp424s and click download Zip on the right
+1) go to https://github.com/iliabenson/comp424s and click download Zip on the right
 
-2) unzip the folder and take all the scripts and put them into a new file called Scripts in your home directory. this is important, the new folder has to be in your home directory and it has to be called Scripts awith a capitol S.
+2) unzip the folder and take all the scripts and put them into a new file called Scripts in your home directory. this is important, the new folder has to be in your home directory and it has to be called Scripts a with a capitol S.
 
 3) open up a terminal in your by pressing CTRL+ALT+T and type "cd ./Scripts"
 
@@ -44,7 +44,7 @@
 
 # Configure ubuntu
 
-1) this is easy search for gufw, its the firewall configuration. originally, iptables was just a network configuration command line program which was complicated as all hell, it then bacame managed by ufw, which stands for uncomplicated firewall. it too is a a command line program but way better. gufw is the gui verion of gufw. once it opens just turn status to on and set profile to public. and we are done with firewall. 
+1) search for gufw, its the firewall configuration. originally, iptables was just a network configuration command line program which was complicated as all hell, it then bacame managed by ufw, which stands for uncomplicated firewall. it too is a command line program but way better. gufw is the gui verion of ufw. once it opens just turn status to "on" and set profile to "public". and we are done with firewall for now. 
 
 2) check if apache is running, type "service apache2 status" if it is running open up browser and go to localhost/info.php you should see php info page. if apache is not running start it (type "service apache2 start") and then go to localhost/info.php.
 

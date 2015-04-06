@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 clear
 echo "Welcome, I will now install some cool shit"
