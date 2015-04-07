@@ -16,7 +16,7 @@ sudo apt-get install build-essential
 cd /media
 cd $(uname -r)
 cd VBOX*
-sudo ./VBoxLinuxAdditions.run
+sudo /media/$USER/VBOX*/VBoxLinuxAdditions.run
 
 echo "add vboxvideo in the next line after lp, click save and file quit"
 
