@@ -33,12 +33,32 @@ echo "Add index.php to the beginning of index files. The page should now look li
 
 </IfModule>"
 
-sudo nano /etc/apache2/mods-enabled/dir.conf
+sudo gedit /etc/apache2/mods-enabled/dir.conf
 
 echo "<?php
 phpinfo();
 ?>" > info.php
 
+f_pause 'just save the file and press enter'
+
 sudo cp ./info.php /var/www/html/info.php
 
 sudo service apache2 restart
+
+echo "about to install phpmyadmin do the following:"
+echo "* select apache2 from the server"
+echo "* choose YEs when asked about wheather to configure the datavase for phpmyadmin with dbconfig-common"
+echo "* enter you MySQL password when prompted"
+echo "* enter the password that you want to use to log into phpmyadmin"
+
+f_pause 'press enter to continue'
+
+sudo apt-get install phpmyadmin apache2-utils
+
+sudo gedit /etc/apache2/apache2.conf
+
+Include /etc/phpmyadmin/apache.conf
+
+sudo service apache2 restart
+
+echo "about to lock down phpmyadmin for security"
