@@ -1,8 +1,0 @@
-alias reboot="sudo shutdown -r now"
-alias agi="sudo apt-get install"
-alias update="sudo apt-get update && sudo apt-get upgrade -y"
-alias scripts="cd ~/Scripts"
-alias documents="cd ~/Documents"
-alias downloads="cd ~/Downloads"
-alias cls="clear"
-alias emacs="emacs -nw"
