@@ -30,7 +30,7 @@
 
 4) from there type "ls -l -a" take note of the files with the .sh extention, these are scripts. ignore all other files.
 
-5) for each script type "chmod u+x NAME" where NAME is the name of the script that was displayed from step 4.
+5) for each script type "chmod u+x *.sh" now rerun the command from step 4, all the files with the .sh extention should now be writtin in green.
 
 6) first execute the vbox_unity_setup.sh by typeing "./vbox_unity_setup.sh" there are on screen instructions and it requires some manual entering of information but it is quickish.... this will also restart the vbox image
 
